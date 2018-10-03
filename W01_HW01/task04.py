@@ -10,11 +10,11 @@ def create_dict(name:str, age:int, hobby:str):
     :param hobby:
     :return: dictionary
     """
-    resuslt_dict = {}
-    resuslt_dict["Name"] = name
-    resuslt_dict["Age"] = age
-    resuslt_dict["Hobby"] = hobby
+    #resuslt_dict = {}
+    #resuslt_dict["Name"] = name
+    #resuslt_dict["Age"] = age
+    #resuslt_dict["Hobby"] = hobby
 
-    return resuslt_dict
+    return {'name': name, 'age': age, 'hobby': hobby}
 
 print(create_dict("Andrii", 34, "Books"))
