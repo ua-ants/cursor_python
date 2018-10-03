@@ -2,18 +2,22 @@
 # 1. Create list with 10 elements using range method.  First element is 1.
 #    Each next  equal previous plus 2
 
-task_two_list = [1]
-for i in range(9):
-    task_two_list.append(task_two_list[i]+2)
-print(task_two_list)
+task_two_list = [x for x in range(1, 20, 2)]
+
+#task_two_list = [1]
+#for i in range(9):
+#    task_two_list.append(task_two_list[i]+2)
+#print(task_two_list)
 
 # 2. Append to previous list elements -  1, 5, 13, 20
 
-add_to_list = [1, 5, 13, 20]
-for i in range(add_to_list.__len__()):
-    task_two_list.append(add_to_list[i])
+task_two_list.extend([1, 5, 13, 20])
 
-print(task_two_list)
+#add_to_list = [1, 5, 13, 20]
+#for i in range(add_to_list.__len__()):
+#    task_two_list.append(add_to_list[i])
+
+#print(task_two_list)
 
 # 3. Create set from previous list.
 
@@ -34,11 +38,10 @@ def compare_elements(a:list, b:set):
     :return: string with comparison results description
     """
 
-    if a.__len__() > b.__len__():
+    if len(a) > len(b):
         return "List is bigger"
-    elif a.__len__() < b.__len__():
+    elif len(a) < len(b):
         return "Set is bigger"
-    else:
-        return "List and Set are equal"
+    return "List and Set are equal"
 
 print(compare_elements(task_two_list, task_four_set))
