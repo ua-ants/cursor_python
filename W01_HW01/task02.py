@@ -4,20 +4,9 @@
 
 task_two_list = [x for x in range(1, 20, 2)]
 
-#task_two_list = [1]
-#for i in range(9):
-#    task_two_list.append(task_two_list[i]+2)
-#print(task_two_list)
-
 # 2. Append to previous list elements -  1, 5, 13, 20
 
 task_two_list.extend([1, 5, 13, 20])
-
-#add_to_list = [1, 5, 13, 20]
-#for i in range(add_to_list.__len__()):
-#    task_two_list.append(add_to_list[i])
-
-#print(task_two_list)
 
 # 3. Create set from previous list.
 
