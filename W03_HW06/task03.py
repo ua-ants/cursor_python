@@ -20,24 +20,23 @@
 
 import task01 as dev
 
-class IT_company:
+
+class ITCompany:
 
     employees = []
 
     def list_employees(self):
-        return sorted(self.employees, key=lambda dev: dev.years_experience)
+        return sorted(self.employees, key=lambda developer: developer.years_experience)
 
     def add_employee(self, new_employee: dev.Developer):
-        if new_employee.years_experiance < 3:
-            print('Not enough experiance')
+        if new_employee.years_experience < 3:
+            print('Not enough experience')
         else:
             self.employees.append(new_employee)
 
     def fire_employee(self, name: str):
-        removed = 0
         for emp in self.employees:
             if emp.name == name:
                 self.employees.remove(emp)
-                removed = 1
-        if not removed:
-            print("Employee not found")
+                return "Employee {name} is fired".format(name=name)
+        return "Employee {name} not found".format(name=name)
