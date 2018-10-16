@@ -2,6 +2,6 @@
 
 def names_to_uppercase(members: list) -> list:
     for d in members:
-        d.update((k, v.upper()) for k, v in d.items() if k == 'name')
+        d['name'] = d['name'].upper()
     return members
 

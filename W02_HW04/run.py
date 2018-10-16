@@ -22,16 +22,22 @@ members = [
 
 
 #2
+print('*'*20 + 'TASK #2' + '*'*120)
 names_to_uppercase(members)
+print(members)
 #3
+print('*'*20 + 'TASK #3' + '*'*120)
 add_load(members)
 print(members)
 delete_200(members)
 print(members)
 #4
+print('*'*20 + 'TASK #4' + '*'*120)
 members = exclude_o_members(members)
 print(members)
 #5
+print('*'*20 + 'TASK #5' + '*'*120)
 print(return_summary(members))
 #6
+print('*'*20 + 'TASK #6' + '*'*120)
 print(sort_members(members))
