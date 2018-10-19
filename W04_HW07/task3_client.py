@@ -3,6 +3,10 @@ import json
 from _datetime import datetime
 
 
+HOST = '127.0.0.1'
+PORT = 4000
+
+
 def ping_server(url, json_data):
     try:
         response = requests.post(url, json=json_data)
@@ -15,7 +19,12 @@ def ping_server(url, json_data):
 
 
 if __name__ == '__main__':
-    app_setting_data = json.load(open("app_settings.json", "r"))
+    try:
+        app_setting_data = json.load(open("app_settings.json", "r"))
+    except FileNotFoundError:
+        print('configuration file not found')
+    else:
+        app_setting_data = {'host': HOST, 'port': PORT}
     host = app_setting_data['host']
     port = app_setting_data['port']
     url = f'http://{host}:{port}/'

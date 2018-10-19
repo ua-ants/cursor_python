@@ -5,6 +5,10 @@ import json
 
 app = Flask(__name__)
 
+HOST = '127.0.0.1'
+PORT = 4000
+DEBUG = False
+
 MEMBERS = {
     'denis': {'age': 25, 'gender': 'male', 'name': 'denis'}
 }
@@ -49,7 +53,12 @@ def handle():
 
 
 if __name__ == '__main__':
-    app_setting_data = json.load(open("app_settings.json", "r"))
+    try:
+        app_setting_data = json.load(open("app_settings.json", "r"))
+    except FileNotFoundError:
+        print('configuration file not found')
+    else:
+        app_setting_data = {'host': HOST, 'port': PORT, 'debug_mode': DEBUG}
     app.run(port=app_setting_data['port'],
             host=app_setting_data['host'],
             debug=app_setting_data['debug_mode'])
