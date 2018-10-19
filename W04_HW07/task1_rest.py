@@ -58,10 +58,10 @@ def profile(name: str):
 def dump_members(file_name: str):
     if flask.request.method =='GET':
         json.dump(MEMBERS, open(file_name, "w"))
-        result = '{"status": "OK", "message": f"File {file_name} created and saved"}'
+        result = {"status": "OK", "message": f"File {file_name} created and saved"}
     else:
-        result = '{"status": "Fail", "error": "Unsupported method for the endpoint"}'
-    return result
+        result = {"status": "Fail", "error": "Unsupported method for the endpoint"}
+    return json.dumps(result)
 
 if __name__ == '__main__':
     # Use data from json file to setup app.run method
