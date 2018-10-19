@@ -1,0 +1,23 @@
+Link: https://telegra.ph/Homework-Week-4-Lesson-1-10-11
+
+Task 1
+
+Use rest_simple_example.py to solve this task
+
+Create json file with server settings (host, port, debug_mode)
+Use data from json file to setup app.run method
+Add route that will dump current states of members t o json file
+
+Task 2
+
+Use json_rpc_simple_example.py to solve this task
+
+Create implementation for getMember method.
+Create function that will return JSON-RPC success valid response.
+Create function that will return JSON-RPC response
+Add ping method that return success response
+
+Task 3
+
+Create client.py. Make request to your server from json_rpc_simple_example
+and check if server is alive
