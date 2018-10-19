@@ -1,0 +1,58 @@
+https://telegra.ph/Homework-Web-app-architecture-Request-Response-model-Routing--Controllers-MVC-10-14
+
+Homework: Web app architecture. Request-Response model. Routing & Controllers. MVC
+Alexander KozhokarOctober 14, 2018
+Полезные источники: http://flask.pocoo.org/docs/1.0/quickstart/
+
+Установите Flask
+pip install Flask
+2. Создайте маленькое приложение на Flask
+
+создайте файл app.py
+
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+Откройте терминал и перейдите в директорию с файлом  app.py. Выполните:
+
+$ export FLASK_APP=hello.py
+$ flask run
+ * Running on http://127.0.0.1:5000/
+
+Перейдите в браузере на страничку localhost:5000, Вы должны увидеть надпись 'Hello, World'. Если надпись не появилась, проверьте, что приложение запустилось на 5000 порту.
+
+
+
+Не забывайте перезапускать сервер командой flask run, когда меняете файл app.py
+
+3. Создайте класс Developer с полями:
+
+first_name
+last_name
+programming_language
+Определите ему магический метод, который позволил бы отображать разработчика в виде '{first_name} {last_name} - {programming_language}'
+
+
+
+4. Переименуйте контроллер 'hello_world' на 'developer_controller'. Создайте в контроллере экземпляр (объект) разработчика, и верните в ответе его в читабельном виде.
+
+@app.route('/')
+def developer_controller():
+    # Создать экземпляр разработчика
+    return # Вернуть разработчика в виде '{first_name} {last_name} - {programming_language}'
+Перейдите в браузер на localhost:5000 и проверьте что hello world поменялось на  '{first_name} {last_name} - {programming_language}' нашего разработчика.
+
+5. Создайте глобально (за пределами контроллера) массив разработчиков, придумайте как минимум 3 разработчика.
+
+Создайте контроллер:
+
+@app.route('/remove_developer')
+def remove_developer():
+    # Удалить со списка любого разработчика
+    return # Вернуть список оставшихся в списке разработчиков в виде '{first_name} {last_name} - {programming_language}' если разработчиков нет то вывести сообщение что список пуст
+Выполните flask run чтобы перезапустить свое приложение.
+
+Отправьте несколько раз запрос с браузера на localhost:5000 и проверьте что разработчики удаляются, возвращая каждый раз новый список сотрудников.
