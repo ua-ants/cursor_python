@@ -36,12 +36,12 @@ def profile(name: str):
         if member is None:
             result = {"status": "Fail", "error": f"Could not find member with name {name}"}
         else:
-            result = {"status": "OK", "message": f"We find your user {member}"}
+            result = {"status": "OK", "message": f"We found your user {member}"}
 
     if flask.request.method == 'PATCH':
         member = MEMBERS.get(name)
         if member is None:
-            result = {"status": "Fail", "message": "I dont know about such user. Sorry"}
+            result = {"status": "Fail", "message": "I don't know about such user. Sorry"}
         else:
             params = json.loads(request.data.decode('utf-8'))
             MEMBERS[name].update(params)
@@ -49,7 +49,7 @@ def profile(name: str):
 
     if flask.request.method == 'DELETE':
         if not check_member(name):
-            result = {"status": "Fail", "message": "I dont know about such user. Sorry"}
+            result = {"status": "Fail", "message": "I don't know about such user. Sorry"}
         else:
             del MEMBERS[name]
             result = {"status": "Ok", "message": f"We delete your member bro"}
