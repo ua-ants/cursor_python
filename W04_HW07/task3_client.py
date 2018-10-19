@@ -18,7 +18,7 @@ if __name__ == '__main__':
     app_setting_data = json.load(open("app_settings.json", "r"))
     host = app_setting_data['host']
     port = app_setting_data['port']
-    url = f' http://{host}:{port}/'
+    url = f'http://{host}:{port}/'
     json_data_dict = {"jsonrpc": "2.0", "method": "ping", "params": {"time": str(datetime.now())}}
     json_data = json.dumps(json_data_dict)
     print(ping_server(url, json_data_dict))
