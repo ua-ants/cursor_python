@@ -13,6 +13,7 @@ def ping_server(url, json_data):
     else:
         return json.loads(response.content.decode('utf-8'))
 
+
 if __name__ == '__main__':
     app_setting_data = json.load(open("app_settings.json", "r"))
     host = app_setting_data['host']
