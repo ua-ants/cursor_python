@@ -18,8 +18,20 @@ dev3 = Developer('Filius', 'Flitwick', 'java')
 
 developers = [dev1, dev2, dev3]
 
+
 @app.route('/developer_controller')
 def developer_controller():
+    """
+    In order to create developer and add to the list the controller should be called
+    with parameters:
+    fn - set first name
+    ln - set last name
+    pl - programming language
+    Example: http://[host]:[port]/developer_controller?fn=[first_name]&ln=[last_name]&pl=[language]
+    Otherwise if controller will be called without parameters empty developer instance will
+    be created
+    :return: created developer
+    """
     first_name = request.args.get('fn')
     last_name = request.args.get('ln')
     programming_language = request.args.get('pl')
@@ -32,8 +44,5 @@ def developer_controller():
 def remove_developer():
     if len(developers) == 0:
         return 'There is no developers in the list'
-    else:
-        developers.pop()
-        if len(developers) == 0:
-            return 'Last developer was just removed fro the list'
+    developers.pop()
     return str(list(map(lambda dev: str(dev), developers)))
